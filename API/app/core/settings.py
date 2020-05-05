@@ -40,7 +40,7 @@ INSTALLED_APPS = [
     
     'rest_framework',
 
-    'things',
+    'things.apps.ThingsConfig',
     
 ]
 
@@ -55,6 +55,12 @@ MIDDLEWARE = [
 ]
 
 ROOT_URLCONF = 'core.urls'
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
+    ]
+}
 
 TEMPLATES = [
     {
